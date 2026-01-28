@@ -13,7 +13,11 @@ class NavigationMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(NavigationController());
+    // Get the initial index from arguments (defaults to 0 if not provided)
+    final int initialIndex = Get.arguments ?? 0;
+    final controller = Get.put(
+      NavigationController(initialIndex: initialIndex),
+    );
 
     return AppScaffold(
       //backgroundColor: const Color(0xFFFFF1DB),
@@ -25,9 +29,7 @@ class NavigationMenu extends StatelessWidget {
           decoration: BoxDecoration(
             color: const Color(0xFF202F4E),
             borderRadius: BorderRadius.circular(100),
-            border: Border.all(
-              color: Colors.white.withOpacity(.3),
-            ),
+            border: Border.all(color: Colors.white.withOpacity(.3)),
             boxShadow: [
               BoxShadow(
                 color: Colors.black.withOpacity(0.05),
@@ -100,6 +102,10 @@ class NavigationMenu extends StatelessWidget {
 }
 
 class NavigationController extends GetxController {
+  NavigationController({int initialIndex = 0}) {
+    selectedIndex.value = initialIndex;
+  }
+
   final RxInt selectedIndex = 0.obs;
 
   final List<Map<String, dynamic>> items = [

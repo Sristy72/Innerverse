@@ -44,7 +44,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     ),
 
                     Image.asset(
-                      'assets/images/Frame 2147229491 (4) (2).png',
+                      'assets/images/Frame 2147229491 (1).png',
                       height: 147,
                       width: 155,
                     ),
