@@ -1,7 +1,5 @@
-import 'package:dartz/dartz_streaming.dart' hide Text;
 import 'package:flutter/material.dart';
 import 'package:flutter_khapree/core/common/widgets/app_scaffold.dart';
-import 'package:flutter_khapree/features/journal/screens/journal_screen.dart';
 import 'package:flutter_khapree/features/meditate/screens/meditate_screen.dart';
 import 'package:get/get.dart';
 import 'core/constants/assets_const.dart';
@@ -118,7 +116,7 @@ class NavigationController extends GetxController {
 
   final List<Widget> screens = [
     const HomeScreen(),
-    JournalScreen(),
+    const Text('Journal', style: TextStyle(color: Colors.white),),
     MeditateScreen(),
     const Text('profile', style: TextStyle(color: Colors.white),),
   ];
