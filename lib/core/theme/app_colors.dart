@@ -21,4 +21,7 @@ class AppColors {
 
   static const Color red = Color(0xFFFF988C);
   static const Color successGreen = Color(0xFF039B06);
+  static const Color logoutRed = Color(0xFFDC2626);
+    static const Color textFieldLightGrey = Color(0xFFCCCCCC);
+      static const Color textBlack = Color(0xFF000000);
 }

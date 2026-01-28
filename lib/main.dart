@@ -4,6 +4,13 @@ import 'package:get/get.dart';
 
 import 'core/init/app_initializer.dart';
 import 'core/theme/app_theme.dart';
+import 'features/profile/presentation/screens/change_password_screen.dart';
+import 'features/profile/presentation/screens/edit_profile_screen.dart';
+import 'features/profile/presentation/screens/faq_screen.dart';
+import 'features/profile/presentation/screens/privacy_policy_screen.dart';
+import 'features/profile/presentation/screens/profile_screen.dart';
+import 'features/profile/presentation/screens/subscription_screen.dart';
+import 'features/profile/presentation/screens/terms_condition_screen.dart';
 
 void main() async {
   await AppInitializer.initializeApp();
@@ -19,7 +26,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: AppTheme.light,
-      home: SplashScreen()
+      home: ProfileScreen(),
     );
   }
 }
