@@ -7,7 +7,7 @@ import 'package:get/get.dart';
 import 'core/constants/assets_const.dart';
 import 'core/utils/app_svg.dart';
 import 'features/home/screens/home_screens.dart';
-import 'features/profile/screens/profile_screen.dart';
+
 
 class NavigationMenu extends StatelessWidget {
   const NavigationMenu({super.key});
