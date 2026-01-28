@@ -1,3 +1,4 @@
+import 'package:dartz/dartz_streaming.dart' hide Text;
 import 'package:flutter/material.dart';
 import 'package:flutter_khapree/core/common/widgets/app_scaffold.dart';
 import 'package:flutter_khapree/features/journal/screens/journal_screen.dart';
@@ -119,6 +120,6 @@ class NavigationController extends GetxController {
     const HomeScreen(),
     JournalScreen(),
     MeditateScreen(),
-    const ProfileScreen(),
+    const Text('profile', style: TextStyle(color: Colors.white),),
   ];
 }
