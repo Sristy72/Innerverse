@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_khapree/core/common/widgets/app_scaffold.dart';
 import 'package:flutter_khapree/features/meditate/screens/meditate_screen.dart';
+import 'package:flutter_khapree/features/profile/presentation/screens/profile_screen.dart';
 import 'package:get/get.dart';
 import 'core/constants/assets_const.dart';
 import 'core/utils/app_svg.dart';
@@ -19,6 +20,7 @@ class NavigationMenu extends StatelessWidget {
     );
 
     return AppScaffold(
+      removePadding: true,
       //backgroundColor: const Color(0xFFFFF1DB),
       body: Obx(() => controller.screens[controller.selectedIndex.value]),
       bottomNavigationBar: Obx(
@@ -118,6 +120,7 @@ class NavigationController extends GetxController {
     const HomeScreen(),
     const Text('Journal', style: TextStyle(color: Colors.white),),
     MeditateScreen(),
-    const Text('profile', style: TextStyle(color: Colors.white),),
+    const ProfileScreen(),
+    // const Text('profile', style: TextStyle(color: Colors.white),),
   ];
 }
