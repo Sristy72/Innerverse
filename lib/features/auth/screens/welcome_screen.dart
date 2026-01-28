@@ -5,6 +5,7 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
 import '../../../core/common/widgets/button_widgets.dart';
 import '../../../navigation_menu.dart';
+import '../../quiz/screens/start_your_journey.dart';
 import '../widgets/applogo_with_title.dart';
 
 class WelcomeScreen extends StatefulWidget {
@@ -58,7 +59,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                         borderRadius: BorderRadius.circular(24),
                       ),
                       child: TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Get.to(() => const StartYourJourney());
+                        },
                         child: Text(
                           'Being Quiz',
                           style: TextStyle(
@@ -81,7 +84,6 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                         Get.to(() => const NavigationMenu(), arguments: 2);
                       },
                     ),
-
                   ],
                 ),
               ),
