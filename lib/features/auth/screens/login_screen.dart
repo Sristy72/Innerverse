@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_khapree/features/auth/screens/welcome_screen.dart';
 import 'package:flutx_core/flutx_core.dart' hide Validators;
 import 'package:get/get.dart';
 import '../../../core/common/widgets/app_scaffold.dart';
@@ -60,6 +61,8 @@ class _LoginScreenState extends State<LoginScreen> {
       email: _emailController.text,
       password: _passwordController.text,
     );
+
+    Get.to(() => WelcomeScreen());
   }
 
   @override

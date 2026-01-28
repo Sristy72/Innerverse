@@ -22,8 +22,8 @@ class Images {
   static const String search = '$_base1/search.svg';
   static const String cart = '$_base1/cart.svg';
   static const String home = '$_base1/home.svg';
-  static const String order = '$_base1/order.svg';
-  static const String chat = '$_base1/chat.svg';
+  static const String journal = '$_base1/journal.svg';
+  static const String meditate = '$_base1/meditate.svg';
   static const String profile = '$_base1/profile.svg';
   static const String favorite = '$_base1/heart.svg';
   static const String orders = '$_base1/orders.svg';
