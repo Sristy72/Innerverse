@@ -32,240 +32,240 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return AppScaffold(
-      // removePadding: true,
+      removePadding: true,
       body: SafeArea(
-        child: Column(
-          children: [
-            const SizedBox(height: 16),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              const SizedBox(height: 16),
 
-            /// ================= PROFILE + HIGHLIGHT CARD =================
-            Padding(
-              padding: const EdgeInsets.all(1),
-              child: Container(
-                padding: const EdgeInsets.all(20),
-                decoration: BoxDecoration(
-        
-                  color: const Color(0xFF042F4D).withOpacity(0.3),
-                
-                  borderRadius: BorderRadius.circular(16),
-                  border: Border.all(color: const Color(0xFF00A3FF), width: 1),
-                ),
-                child: Column(
-                  children: [
-                    /// -------- Profile Row --------
-                    Row(
-                      children: const [
-                        CircleAvatar(
-                          radius: 28,
-                          backgroundImage: AssetImage(
-                            'assets/images/avatar2.png',
-                          ),
-                        ),
-                        SizedBox(width: 12),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Madina Araa',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                            SizedBox(height: 4),
-                            Text(
-                              'Welcome back',
-                              style: TextStyle(
-                                color: Colors.white70,
-                                fontSize: 12,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
+              /// ================= PROFILE + HIGHLIGHT CARD =================
+              Padding(
+                padding: const EdgeInsets.all(1),
+                child: Container(
+                  padding: const EdgeInsets.all(20),
+                  decoration: BoxDecoration(
+                    color: const Color(0xFF042F4D).withOpacity(0.3),
+
+                    borderRadius: BorderRadius.circular(16),
+                    border: Border.all(
+                      color: const Color(0xFF00A3FF),
+                      width: 1,
                     ),
-
-                    const SizedBox(height: 16),
-
-                    /// -------- Today Highlight --------
-                    Container(
-                      width: double.infinity,
-                      padding: const EdgeInsets.all(16),
-                      decoration: BoxDecoration(
-                        gradient: const LinearGradient(
-                          colors: [Color(0xFF9333EA), Color(0xFF709FFF)],
-                        ),
-                        borderRadius: BorderRadius.circular(8),
-                        border: Border.all(
-                          color: const Color(0xFF00A3FF),
-                          width: 1,
-                        ),
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisSize: MainAxisSize.min, // 👈 important
-                        children: [
-                          Center(
-                            child: Text(
-                              "Today's highlights",
-                              style: TextStyle(
-                                color: Color(0xFFFFFFFF),
-                                fontSize: 16,
-                                fontWeight: FontWeight.w500,
-                              ),
+                  ),
+                  child: Column(
+                    children: [
+                      /// -------- Profile Row --------
+                      Row(
+                        children: const [
+                          CircleAvatar(
+                            radius: 28,
+                            backgroundImage: AssetImage(
+                              'assets/images/avatar2.png',
                             ),
                           ),
-
-                          const SizedBox(height: 10),
-
-                          Row(
+                          SizedBox(width: 12),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Container(
-                                height: 98,
-                                width: 97,
-                                decoration: BoxDecoration(
-                                  color: Color(0xFF38008E),
-                                  borderRadius: BorderRadius.circular(8),
-                                ),
-                                child: Image.asset(
-                                  'assets/images/sadIcon.png',
-                                  fit: BoxFit.contain,
+                              Text(
+                                'Madina Araa',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w600,
                                 ),
                               ),
-
-                              const SizedBox(width: 12),
-
-                              Expanded(
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: const [
-                                    Text(
-                                      'The Worried',
-                                      style: TextStyle(
-                                        color: Color(0xFFFFFFFF),
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                    ),
-                                    SizedBox(height: 4),
-                                    Text(
-                                      'You are feeling unsure. Take a deep breath and give yourself a moment.',
-                                      style: TextStyle(
-                                        color: Color(0xFFFFFFFF),
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.w400,
-                                      ),
-                                    ),
-                                  ],
+                              SizedBox(height: 4),
+                              Text(
+                                'Welcome back',
+                                style: TextStyle(
+                                  color: Colors.white70,
+                                  fontSize: 12,
                                 ),
                               ),
                             ],
                           ),
                         ],
                       ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
 
-            const SizedBox(height: 20),
+                      const SizedBox(height: 16),
 
-            /// ================= SETTINGS TITLE =================
-            Row(
-              children: [
-                Icon(Icons.settings_outlined, color: Colors.white70),
-                SizedBox(width: 12),
-                Text(
-                  'Setting',
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.white,
+                      /// -------- Today Highlight --------
+                      Container(
+                        width: double.infinity,
+                        padding: const EdgeInsets.all(16),
+                        decoration: BoxDecoration(
+                          gradient: const LinearGradient(
+                            colors: [Color(0xFF9333EA), Color(0xFF709FFF)],
+                          ),
+                          borderRadius: BorderRadius.circular(8),
+                          border: Border.all(
+                            color: const Color(0xFF00A3FF),
+                            width: 1,
+                          ),
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisSize: MainAxisSize.min, // 👈 important
+                          children: [
+                            Center(
+                              child: Text(
+                                "Today's highlights",
+                                style: TextStyle(
+                                  color: Color(0xFFFFFFFF),
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            ),
+
+                            const SizedBox(height: 10),
+
+                            Row(
+                              children: [
+                                Container(
+                                  height: 98,
+                                  width: 97,
+                                  decoration: BoxDecoration(
+                                    color: Color(0xFF38008E),
+                                    borderRadius: BorderRadius.circular(8),
+                                  ),
+                                  child: Image.asset(
+                                    'assets/images/sadIcon.png',
+                                    fit: BoxFit.contain,
+                                  ),
+                                ),
+
+                                const SizedBox(width: 12),
+
+                                Expanded(
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: const [
+                                      Text(
+                                        'The Worried',
+                                        style: TextStyle(
+                                          color: Color(0xFFFFFFFF),
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                      ),
+                                      SizedBox(height: 4),
+                                      Text(
+                                        'You are feeling unsure. Take a deep breath and give yourself a moment.',
+                                        style: TextStyle(
+                                          color: Color(0xFFFFFFFF),
+                                          fontSize: 12,
+                                          fontWeight: FontWeight.w400,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-              ],
-            ),
+              ),
 
-            const SizedBox(height: 16),
+              const SizedBox(height: 20),
 
-            /// ================= SETTINGS LIST =================
-            Expanded(
-              child: Container(
-                padding:  EdgeInsets.all(1),
+              /// ================= SETTINGS TITLE =================
+              Row(
+                children: [
+                  Icon(Icons.settings_outlined, color: Colors.white70),
+                  SizedBox(width: 12),
+                  Text(
+                    'Setting',
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.white,
+                    ),
+                  ),
+                ],
+              ),
+
+              const SizedBox(height: 16),
+
+              /// ================= SETTINGS LIST =================
+              /// ================= SETTINGS LIST =================
+              Container(
+                padding: const EdgeInsets.all(1),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8),
-                  gradient:  LinearGradient(
-                    colors: [Color(0xFF00A3FF66).withOpacity(0.4), Color(0xFF95E545).withOpacity(0.3)],
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
+                  gradient: LinearGradient(
+                    colors: [
+                      Color(0xFF00A3FF66).withOpacity(0.4),
+                      Color(0xFF95E545).withOpacity(0.3),
+                    ],
                   ),
                 ),
                 child: Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(8),
-                    gradient: LinearGradient(
-                      colors: [Color(0xFF02345B), Color(0xFF033255)],)
-                    // color: const Color(0xFF02345B),
+                    gradient: const LinearGradient(
+                      colors: [Color(0xFF02345B), Color(0xFF033255)],
+                    ),
                   ),
                   child: ListView(
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
                     padding: const EdgeInsets.all(8),
                     children: [
                       _buildSettingsTile(
                         'assets/images/edit.png',
                         'Edit Profile',
-                        ()=> Get.to(() => const EditProfileScreen()),
+                        () => Get.to(() => const EditProfileScreen()),
                         'Update your personal information',
                       ),
                       _buildSettingsTile(
                         'assets/images/password.png',
                         'Change Password',
                         () => Get.to(() => const ChangePasswordScreen()),
-                       
-                        'Update your personal information',
+                        'Update your password',
                       ),
                       _buildSettingsTile(
                         'assets/images/subscription.png',
                         'Subscription',
-                        () => Get.to(() =>  SubscriptionScreen()),
-                      
+                        () => Get.to(() => SubscriptionScreen()),
                         'Manage your plan and billing',
                       ),
                       _buildSettingsTile(
                         'assets/images/privacy.png',
                         'Privacy policy',
                         () => Get.to(() => const PrivacyPolicyScreen()),
-                     
                         'How we handle your data',
                       ),
                       _buildSettingsTile(
                         'assets/images/terms.png',
                         'Terms of Service',
                         () => Get.to(() => const TermsConditionsScreen()),
-           
                         'App usage terms and conditions',
                       ),
                       _buildSettingsTile(
                         'assets/images/faq.png',
                         'FAQ',
                         () => Get.to(() => const FaqScreen()),
-                  
                         'Get the information you need',
                       ),
                       _buildSettingsTile(
                         'assets/images/logout.png',
                         'Log out',
-                        // () {profileController.logout();},
                         () {},
-                        //// TODO: Implement logout
                       ),
                     ],
                   ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
@@ -285,7 +285,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 11.5),
         decoration: BoxDecoration(
           color: const Color(0xFF001D3D),
-      
+
           borderRadius: BorderRadius.circular(8),
           // boxShadow: [
           //   BoxShadow(
