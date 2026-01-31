@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_khapree/core/common/widgets/app_scaffold.dart';
+import 'package:flutter_khapree/features/journal/presentation/screens/journal_screen.dart';
 import 'package:flutter_khapree/features/meditate/screens/meditate_screen.dart';
 import 'package:flutter_khapree/features/profile/presentation/screens/profile_screen.dart';
 import 'package:get/get.dart';
@@ -118,9 +119,10 @@ class NavigationController extends GetxController {
 
   final List<Widget> screens = [
     const HomeScreen(),
-    const Text('Journal', style: TextStyle(color: Colors.white),),
+    JournalScreen(),
+    // const Text('Journal', style: TextStyle(color: Colors.white),),
     MeditateScreen(),
-    const ProfileScreen(),
+    ProfileScreen(),
     // const Text('profile', style: TextStyle(color: Colors.white),),
   ];
 }
