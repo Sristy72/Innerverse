@@ -346,8 +346,7 @@ class HomeScreen extends StatelessWidget {
                       ),
                     ),
                     onPressed: () {
-                      Get.to(() => const NavigationMenu(), arguments: 1);
-                      // Get.to(() => JournalScreen());
+                      Get.find<NavigationController>().selectedIndex.value = 1;
                     },
                     child: const Text(
                       "Start Mission",
