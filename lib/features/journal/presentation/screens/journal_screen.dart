@@ -13,7 +13,7 @@ class JournalScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppScaffold(
-      removePadding: true,
+      // removePadding: true,
       // backgroundColor: const Color(0xFF020B2D),
       // bottomNavigationBar: _BottomNav(),
       body: SafeArea(
@@ -88,9 +88,10 @@ class _TodayJournalCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 150,
+      height: 139,
       width: double.infinity,
       padding: const EdgeInsets.all(16),
+      
       decoration: BoxDecoration(
         // gradient: const LinearGradient(
         //   colors: [Color(0xFF97BAFF), Color(0xFF2058E6)],
@@ -100,30 +101,14 @@ class _TodayJournalCard extends StatelessWidget {
         border: Border.all(color: const Color(0xFF709FFF)),
       ),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Container(
-            // height: 123,
-            // width: 120,
-            //     decoration: BoxDecoration(
-            //       // gradient: LinearGradient(colors: [
-            //       //   const Color(0xFF97BAFF).withOpacity(0.5),
-            //       //   const Color(0xFF2058E6).withOpacity(0.5),
-            //       // ]),
-            //       color: Color(0xFF072755),
-            //       borderRadius: BorderRadius.circular(8),
-
-            // ),
-            child: Image.asset(
-              "assets/images/journal.png",
-              height: 130,
-              width: 140,
-              fit: BoxFit.contain,
-            ),
-            // const Icon(
-            //   Icons.sentiment_satisfied_alt,
-            //   color: Colors.white,
-            //   size: 36,
-            // ),
+          Image.asset(
+            "assets/images/journal.png",
+            height: 123,           // adjust size so it looks balanced
+            width: 110,
+            fit: BoxFit.contain,
           ),
           const SizedBox(width: 16),
           Expanded(
