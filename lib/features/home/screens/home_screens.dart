@@ -17,20 +17,18 @@ class HomeScreen extends StatelessWidget {
       removePadding: true,
       // backgroundColor: Colors.transparent,
       body: SafeArea(
-        child: Column(
-          children: [
-            const SizedBox(height: 16),
-            _header(),
-            const SizedBox(height: 24),
-            _statsRow(),
-            const SizedBox(height: 16),
-            Expanded(
-              child: SingleChildScrollView(
-                padding: const EdgeInsets.only(bottom: 16),
-                child: _recommendationsContent(),
-              ),
-            ),
-          ],
+        child: SingleChildScrollView(
+          padding: EdgeInsets.only(bottom: 16),
+          child: Column(
+            children: [
+              SizedBox(height: 16),
+              _header(),
+              SizedBox(height: 24),
+              _statsRow(),
+              SizedBox(height: 16),
+              _recommendationsContent(),
+            ],
+          ),
         ),
       ),
     );
@@ -152,7 +150,7 @@ class HomeScreen extends StatelessWidget {
   }) {
     return Expanded(
       child: Container(
-        height: 120,
+        height: 135,
         width: 109,
         decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -169,8 +167,8 @@ class HomeScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
-              height: 48,
-              width: 48,
+              height: 45,
+              width: 45,
               decoration: BoxDecoration(
                 color: iconBgColor,
                 borderRadius: BorderRadius.circular(8),
@@ -179,8 +177,8 @@ class HomeScreen extends StatelessWidget {
               child: Image.asset(
                 image,
                 // fit: BoxFit.contain,
-                height: 20,
-                width: 20,
+                height: 18,
+                width: 18,
               ),
             ),
             const SizedBox(height: 8),
@@ -209,7 +207,6 @@ class HomeScreen extends StatelessWidget {
       ),
     );
   }
-
 
   // 🔹 Recommendations
   Widget _recommendationsContent() {
@@ -287,7 +284,7 @@ class HomeScreen extends StatelessWidget {
   // 🔹 Daily Mission Card
   Widget _missionCard() {
     return Container(
-      height: 145,
+      height: 168,
       // width: double.infinity,
       padding: const EdgeInsets.all(8),
       decoration: BoxDecoration(
@@ -358,6 +355,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ],
                 ),
+                SizedBox(height: 6),
 
                 /// 🔘 BUTTON AT THE BOTTOM
                 SizedBox(
@@ -375,7 +373,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                     onPressed: () {
                       // Get.to(() => const NavigationMenu(), arguments: 1);
-                      Get.to(()=> JournalScreen());
+                      Get.to(() => JournalScreen());
                     },
                     child: const Text(
                       "Start Mission",
