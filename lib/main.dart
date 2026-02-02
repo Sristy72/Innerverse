@@ -4,6 +4,9 @@ import 'package:get/get.dart';
 
 import 'core/init/app_initializer.dart';
 import 'core/theme/app_theme.dart';
+import 'features/journal/presentation/screens/journal_entry_screen.dart';
+import 'features/journal/presentation/screens/journal_screen.dart';
+
 
 void main() async {
   await AppInitializer.initializeApp();
@@ -19,7 +22,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: AppTheme.light,
-      home: SplashScreen()
+      home: SplashScreen(),
     );
   }
 }
