@@ -19,8 +19,9 @@ class HomeScreen extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
+            const SizedBox(height: 16),
             _header(),
-            const SizedBox(height: 20),
+            const SizedBox(height: 24),
             _statsRow(),
             const SizedBox(height: 16),
             Expanded(
@@ -373,7 +374,8 @@ class HomeScreen extends StatelessWidget {
                       shadowColor: Colors.black.withOpacity(0.1),
                     ),
                     onPressed: () {
-                      Get.to(() => const NavigationMenu(), arguments: 1);
+                      // Get.to(() => const NavigationMenu(), arguments: 1);
+                      Get.to(()=> JournalScreen());
                     },
                     child: const Text(
                       "Start Mission",
