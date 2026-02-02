@@ -118,7 +118,7 @@ class NavigationController extends GetxController {
   ];
 
   final List<Widget> screens = [
-    const HomeScreen(),
+     HomeScreen(),
     JournalScreen(),
     // const Text('Journal', style: TextStyle(color: Colors.white),),
     MeditateScreen(),
