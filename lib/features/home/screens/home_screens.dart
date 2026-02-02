@@ -14,17 +14,21 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppScaffold(
-      removePadding: true,
+      //removePadding: true,
       // backgroundColor: Colors.transparent,
       body: SafeArea(
-        child: Column(
-          children: [
-            _header(),
-            const SizedBox(height: 20),
-            _statsRow(),
-            const SizedBox(height: 16),
-            _recommendations(),
-          ],
+        child: SingleChildScrollView(
+          padding: EdgeInsets.only(bottom: 16),
+          child: Column(
+            children: [
+              SizedBox(height: 16),
+              _header(),
+              SizedBox(height: 24),
+              _statsRow(),
+              SizedBox(height: 16),
+              _recommendationsContent(),
+            ],
+          ),
         ),
       ),
     );
@@ -58,7 +62,7 @@ class HomeScreen extends StatelessWidget {
             ),
           ],
         ),
-        const Spacer(),
+         const Spacer(),
         Stack(
           children: [
             const Icon(Icons.notifications_none, color: Colors.white, size: 26),
@@ -173,8 +177,8 @@ class HomeScreen extends StatelessWidget {
               child: Image.asset(
                 image,
                 // fit: BoxFit.contain,
-                height: 20,
-                width: 20,
+                height: 18,
+                width: 18,
               ),
             ),
             const SizedBox(height: 8),
@@ -194,7 +198,8 @@ class HomeScreen extends StatelessWidget {
               textAlign: TextAlign.center,
               style: const TextStyle(
                 color: Color(0xFFFFFFFF),
-                fontSize: 14,
+                fontSize: 12,
+             
                 fontWeight: FontWeight.w500,
               ),
             ),
@@ -205,42 +210,34 @@ class HomeScreen extends StatelessWidget {
   }
 
   // 🔹 Recommendations
-  Widget _recommendations() {
-    return Expanded(
-      child: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text(
-              "Today's Recommendations",
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 18,
-                fontWeight: FontWeight.w500,
-              ),
-            ),
-            const SizedBox(height: 16),
-
-            _recommendationTile(
-              title: "Morning Meditation",
-              subtitle: "Start your day with inner peace",
-            ),
-            _recommendationTile(
-              title: "Journal Prompt",
-              subtitle: "Reflect on your patterns",
-            ),
-            _recommendationTile(
-              title: "Daily Mission",
-              subtitle: "Practice self-compassion",
-            ),
-
-            const SizedBox(height: 16),
-            _missionCard(),
-
-            // const SizedBox(height: 24), // 👈 breathing room
-          ],
+  Widget _recommendationsContent() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const Text(
+          "Today's Recommendations",
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 18,
+            fontWeight: FontWeight.w500,
+          ),
         ),
-      ),
+        const SizedBox(height: 16),
+        _recommendationTile(
+          title: "Morning Meditation",
+          subtitle: "Start your day with inner peace",
+        ),
+        _recommendationTile(
+          title: "Journal Prompt",
+          subtitle: "Reflect on your patterns",
+        ),
+        _recommendationTile(
+          title: "Daily Mission",
+          subtitle: "Practice self-compassion",
+        ),
+        const SizedBox(height: 16),
+        _missionCard(),
+      ],
     );
   }
 
@@ -251,7 +248,7 @@ class HomeScreen extends StatelessWidget {
     return Container(
       width: double.infinity,
       margin: const EdgeInsets.only(bottom: 16),
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.only(left: 8, top: 16, right: 8, bottom: 16),
       decoration: BoxDecoration(
         color: const Color(0xFF1A3A88),
         borderRadius: BorderRadius.circular(8),
@@ -276,8 +273,9 @@ class HomeScreen extends StatelessWidget {
             subtitle,
             style: const TextStyle(
               color: Color(0xFFFCFDFF),
-              fontSize: 12,
+              fontSize: 14,
               fontWeight: FontWeight.w400,
+              
             ),
           ),
         ],
@@ -288,12 +286,12 @@ class HomeScreen extends StatelessWidget {
   // 🔹 Daily Mission Card
   Widget _missionCard() {
     return Container(
-      height: 170,
-      width: double.infinity,
-      padding: const EdgeInsets.all(16),
+      height: 168,
+      // width: double.infinity,
+      padding: const EdgeInsets.all(8),
       decoration: BoxDecoration(
         gradient: const LinearGradient(
-          colors: [Color(0xFF1A2F54), Color(0xFF0F254D)],
+          colors: [Color(0xFF223457), Color(0xFF0F254D)],
           begin: Alignment.centerLeft,
           end: Alignment.centerRight,
         ),
@@ -301,40 +299,70 @@ class HomeScreen extends StatelessWidget {
         border: Border.all(color: const Color(0xFF3377FF)),
       ),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween, // <-- added
         children: [
-          Image.asset(
-            'assets/images/daily.png',
+          Container(
             height: 123,
             width: 122,
-            fit: BoxFit.contain,
+            decoration: BoxDecoration(
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.25), // shadow color
+                  spreadRadius: 0, // how much the shadow spreads
+                  blurRadius: 4, // blur effect
+                  offset: const Offset(0, 0.5), // x, y offset
+                ),
+              ],
+            ),
+            child: Image.asset(
+              'assets/images/daily.png',
+              height: 123,
+              width: 122,
+              fit: BoxFit.contain,
+            ),
           ),
 
+          // Image.asset(
+          //   'assets/images/daily.png',
+          //   height: 123,
+          //   width: 122,
+          //   fit: BoxFit.contain,
+
+          // ),
           const SizedBox(width: 16),
 
           /// 📝 TEXT + BUTTON COLUMN
           Expanded(
+            
             child: Column(
-              mainAxisSize: MainAxisSize.min,
+              mainAxisSize: MainAxisSize.max,
               crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment:
+                  MainAxisAlignment.spaceBetween, // text top, button bottom
               children: [
-                const Text(
-                  "Daily Mission",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16,
-                  ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  
+                  
+                  children: const [
+                    Text(
+                      "Daily Mission",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 16,
+                      ),
+                    ),
+                    SizedBox(height: 6),
+                    Text(
+                      "Write about a moment today\nwhen you felt truly seen.",
+                      style: TextStyle(color: Color(0xFFFCFDFF), fontSize: 11.5,fontWeight: FontWeight.w400),
+                    ),
+                  ],
                 ),
-                const SizedBox(height: 6),
-                const Text(
-                  "Write about a moment today\nwhen you felt truly seen.",
-                  style: TextStyle(color: Colors.white70, fontSize: 13),
-                ),
+                // SizedBox(height: 6),
 
-                const SizedBox(height: 12),
-
-                /// 🔘 BUTTON IN SECOND ROW
+                /// 🔘 BUTTON AT THE BOTTOM
                 SizedBox(
                   height: 48,
                   width: 189,
@@ -344,6 +372,9 @@ class HomeScreen extends StatelessWidget {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(24),
                       ),
+                      alignment: Alignment.center,
+                      elevation: 6, // <-- shadow depth
+                      shadowColor: Colors.black.withOpacity(0.1),
                     ),
                     onPressed: () {
                       Get.find<NavigationController>().selectedIndex.value = 1;
