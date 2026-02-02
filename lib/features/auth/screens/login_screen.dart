@@ -92,7 +92,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         focusNode: _emailFocus,
                         keyboardType: TextInputType.emailAddress,
                         textInputAction: TextInputAction.next,
-
+                        cursorColor: Colors.white,
                         style: const TextStyle(
                           fontSize: 16,
                           color: Colors.white,
@@ -119,6 +119,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         valueListenable: _obscurePassword,
                         builder: (context, obscure, _) {
                           return TextFormField(
+                            cursorColor: Colors.white,
                             controller: _passwordController,
                             focusNode: _passwordFocus,
                             obscureText: obscure,

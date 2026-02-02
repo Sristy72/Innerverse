@@ -61,6 +61,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
       return;
     }
 
+    Get.to(() => LoginScreen());
+
     // Pass data to AuthController (you can extend AuthController to handle signup)
 
     // await _authCtrl.register(_nameController.text.trim(), _emailController.text.trim(), _passwordController.text);
@@ -105,6 +107,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       TextFormField(
                         controller: _nameTEController,
                         focusNode: _nameFocus,
+                        cursorColor: Colors.white,
                         keyboardType: TextInputType.name,
                         textInputAction: TextInputAction.next,
                         style: const TextStyle(
@@ -150,6 +153,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       TextFormField(
                         controller: _emailTEController,
                         focusNode: _emailFocus,
+                        cursorColor: Colors.white,
                         keyboardType: TextInputType.emailAddress,
                         textInputAction: TextInputAction.next,
 
@@ -198,7 +202,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         focusNode: _phoneFocus,
                         keyboardType: TextInputType.phone,
                         textInputAction: TextInputAction.next,
-
+                        cursorColor: Colors.white,
                         style: const TextStyle(
                           fontSize: 16,
                           color: Colors.white,
@@ -247,6 +251,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           return TextFormField(
                             controller: _passwordTEController,
                             focusNode: _passwordFocus,
+                            cursorColor: Colors.white,
                             obscureText: obscure,
                             textInputAction: TextInputAction.done,
                             style: const TextStyle(color: Colors.white),
@@ -304,6 +309,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             controller: _confirmPassTEController,
                             focusNode: _confirmPassFocus,
                             obscureText: obscure,
+                            cursorColor: Colors.white,
                             textInputAction: TextInputAction.done,
                             style: const TextStyle(color: Colors.white),
                             decoration: context.primaryInputDecoration().copyWith(

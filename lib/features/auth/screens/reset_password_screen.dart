@@ -90,6 +90,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                             return TextFormField(
                               controller: _passwordTEController,
                               focusNode: _passwordFocus,
+                              cursorColor: Colors.white,
                               obscureText: obscure,
                               textInputAction: TextInputAction.done,
                               style: const TextStyle(color: Colors.white),
@@ -146,6 +147,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                             return TextFormField(
                               controller: _confirmPassTEController,
                               focusNode: _confirmPassFocus,
+                              cursorColor: Colors.white,
                               obscureText: obscure,
                               textInputAction: TextInputAction.done,
                               style: const TextStyle(color: Colors.white),

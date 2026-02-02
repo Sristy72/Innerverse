@@ -94,6 +94,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                     TextFormField(
                       controller: _emailCOntroller,
                       focusNode: _focusNode,
+                      cursorColor: Colors.white,
                       keyboardType: TextInputType.emailAddress,
                       textInputAction: TextInputAction.done,
                       style: const TextStyle(fontSize: 16, color: Colors.white),
