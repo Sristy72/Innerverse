@@ -62,7 +62,7 @@ class HomeScreen extends StatelessWidget {
             ),
           ],
         ),
-        const Spacer(),
+        // const Spacer(),
         Stack(
           children: [
             const Icon(Icons.notifications_none, color: Colors.white, size: 26),
@@ -150,7 +150,7 @@ class HomeScreen extends StatelessWidget {
   }) {
     return Expanded(
       child: Container(
-        height: 135,
+        height: 120,
         width: 109,
         decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -167,8 +167,8 @@ class HomeScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
-              height: 45,
-              width: 45,
+              height: 48,
+              width: 48,
               decoration: BoxDecoration(
                 color: iconBgColor,
                 borderRadius: BorderRadius.circular(8),
@@ -198,7 +198,8 @@ class HomeScreen extends StatelessWidget {
               textAlign: TextAlign.center,
               style: const TextStyle(
                 color: Color(0xFFFFFFFF),
-                fontSize: 14,
+                fontSize: 12,
+             
                 fontWeight: FontWeight.w500,
               ),
             ),
@@ -272,8 +273,9 @@ class HomeScreen extends StatelessWidget {
             subtitle,
             style: const TextStyle(
               color: Color(0xFFFCFDFF),
-              fontSize: 12,
+              fontSize: 14,
               fontWeight: FontWeight.w400,
+              
             ),
           ),
         ],
@@ -331,6 +333,7 @@ class HomeScreen extends StatelessWidget {
 
           /// 📝 TEXT + BUTTON COLUMN
           Expanded(
+            
             child: Column(
               mainAxisSize: MainAxisSize.max,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -339,23 +342,25 @@ class HomeScreen extends StatelessWidget {
               children: [
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
+                  
+                  
                   children: const [
                     Text(
                       "Daily Mission",
                       style: TextStyle(
                         color: Colors.white,
-                        fontWeight: FontWeight.bold,
+                        fontWeight: FontWeight.w500,
                         fontSize: 16,
                       ),
                     ),
                     SizedBox(height: 6),
                     Text(
                       "Write about a moment today\nwhen you felt truly seen.",
-                      style: TextStyle(color: Colors.white70, fontSize: 13),
+                      style: TextStyle(color: Color(0xFFFCFDFF), fontSize: 11.5,fontWeight: FontWeight.w400),
                     ),
                   ],
                 ),
-                SizedBox(height: 6),
+                // SizedBox(height: 6),
 
                 /// 🔘 BUTTON AT THE BOTTOM
                 SizedBox(
